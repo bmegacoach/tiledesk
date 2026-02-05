@@ -1,0 +1,123 @@
+<h1 mat-dialog-title *ngIf="automationCopilotIsAvailable === undefined">
+    <!-- Enter the name of the   -->
+    <!-- {{'Create' | translate}}  -->
+    <span *ngIf="botSubType === 'chatbot'">
+        {{'CreateAnAIAgent' | translate}}
+    </span>
+    <span *ngIf="botSubType === 'voice' || botSubType === 'voice_twilio'">
+        {{'CreateAnAIVoiceAgent' | translate}}
+    </span>
+    <span *ngIf="botSubType === 'copilot'">
+        {{'CreateACopilot' | translate}}
+    </span>
+    <span *ngIf="botSubType === 'webhook'">
+        {{'CreateAWebhook' | translate}}
+    </span>
+</h1>
+
+<div class="m-header" *ngIf="automationCopilotIsAvailable !== undefined" style="margin-bottom: 12px;">
+    <h1 mat-dialog-title style="margin-bottom: 6px">
+        <span *ngIf="botSubType === 'copilot'">
+            {{'CreateACopilot' | translate}}
+        </span>
+    </h1>
+
+    <div class="m-top-right-icon">
+        <span class="material-icons-outlined" (click)="onNoClick()">
+            <!-- play_arrow -->
+            close
+        </span>
+    </div>
+</div>
+<!-- <div mat-dialog-content>
+        <mat-form-field appearance="fill" class="cc-mat-form-field">
+            <mat-label> Chatbot name</mat-label>
+            <input type="text" matInput [(ngModel)]="chatbotName">
+        </mat-form-field>
+    
+</div> -->
+
+<div mat-dialog-content>
+
+    <mat-form-field appearance="fill" class="cc-mat-form-field">
+        <mat-label>
+            <span *ngIf="botSubType === 'chatbot'">
+                {{'ChatbotName' | translate}}
+            </span>
+            <span *ngIf="botSubType === 'voice' || botSubType === 'voice_twilio'">
+                {{'AIVoiceAgentName' | translate}}
+            </span>
+
+            <span *ngIf="botSubType === 'copilot'">
+                {{'CopilotName' | translate}}
+            </span>
+
+            <span *ngIf="botSubType === 'webhook'">
+                {{'WebhookName' | translate}}
+            </span>
+
+        </mat-label>
+        <input matInput 
+            [(ngModel)]="chatbotName" 
+            (keydown.enter)='onOkPresssed(chatbotName)'
+            [disabled]="automationCopilotIsAvailable === false || automationCopilotIsEnabled === false">
+    </mat-form-field>
+
+    <form *ngIf="botSubType === 'copilot'" class="example-form">
+        <mat-form-field class="cc-mat-form-field" appearance="fill">
+            <mat-label>{{'KnowledgeBases' | translate}}</mat-label>
+            <input type="text" 
+                placeholder="{{'SelectAkB' | translate}}" 
+                matInput 
+                [formControl]="myControl"
+                [matAutocomplete]="auto">
+
+                <mat-autocomplete 
+                    #auto="matAutocomplete"
+                    [displayWith]="displayFn">
+                    <mat-option *ngFor="let option of namespaces" [value]="option">
+                        {{ option.name }}
+                    </mat-option>
+                </mat-autocomplete>
+
+        </mat-form-field>
+    </form>
+
+</div>
+<!-- <div> automationCopilotIsAvailable > {{ automationCopilotIsAvailable}}</div> -->
+<!-- <div> automationCopilotIsEnabled > {{ automationCopilotIsEnabled}} </div> -->
+
+<div *ngIf="automationCopilotIsAvailable === undefined" mat-dialog-actions style="justify-content: center;">
+    <button class="mat-dialog-close-btn" mat-button (click)="onNoClick()">
+        {{ "Cancel" | translate }}
+    </button>
+
+    <button [disabled]="chatbotName?.length < 2 || (botSubType === 'copilot' && !namespace_id)"
+        class="mat-dialog-ok-btn" mat-button (click)="onOkPresssed(chatbotName)" cdkFocusInitial>
+        {{'Create' | translate}}
+    </button>
+</div>
+
+<div class="feature-available-from" *ngIf="automationCopilotIsAvailable !== undefined && automationCopilotIsAvailable === false">
+
+    <div style="font-weight: 400;"> {{'FeatureAvailableFromThe'| translate: t_params}} </div>
+    <button class="btn btn--get-feature-no-boxshadow" style="margin-bottom: 0px;" (click)="goToPricing()">
+        <span class="material-icons-outlined get--feature-upgrade-plan-icon">
+            upgrade
+        </span>
+        <span>
+            {{ 'Pricing.UpgradePlan' | translate }}
+        </span>
+    </button>
+</div>
+
+<ng-container *ngIf="isVisiblePAY">
+    <div *ngIf="automationCopilotIsAvailable === true && !automationCopilotIsEnabled">
+        <div class="contact--sales-to-enable-feature">
+            <div style="font-weight: 400;"> {{'ThisFeatureIsInBeta' | translate}}. </div>
+            <div class="contact-sales-to-enable-feature-link" (click)="contacUsViaEmail()">
+                {{'ContactUsToEnableIt' | translate}}
+            </div>
+        </div>
+    </div>
+</ng-container>

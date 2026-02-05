@@ -1,0 +1,282 @@
+<div class="row" style="text-align: center; margin-top:35px">
+  <div class="col-md-12">
+    <h4 class="section-title">
+      {{ 'NumberOfRequests' | translate }}
+    </h4>
+  </div>
+</div>
+
+<div class="row" style="text-align: center; margin-top: 6px;">
+  <!-- left side card -->
+  <div class="col-md-3">
+    <div class="card" style="border-radius: 10px; min-height: 468px;">
+      <!-- <div
+        style="padding-bottom: 28px; padding-top: 30px; font-size: 18px; font-family: 'Poppins', 'Roboto',  'Arial', sans-serif">
+        {{ "Last30DaysConversations" | translate }}
+      </div>
+      <div class="card-content">
+        <p class="number-analytics">{{ conversationsCountLastMonth }}</p>
+      </div> -->
+
+      <div class="conv-analytics-left-card-title-wpr">
+        <!-- {{ 'Analytics.RequestChartTitle' | translate }} {{lastdays}}
+        <span *ngIf="selectedDaysId <= 30">{{ 'Analytics.Days' | translate }}</span>
+        <span *ngIf="selectedDaysId === 90 || selectedDaysId === 180  ">{{ 'Analytics.Months' | translate }}</span>
+        <span *ngIf="selectedDaysId === 360">{{ 'Analytics.Year' | translate }}</span> -->
+
+
+        <div class="conv-analytics-left-card-title" *ngIf="selectedDaysId === 7">
+          <!-- {{ 'Analytics.Last' | translate}} 7 <span style="text-transform: lowercase;"> {{ 'Analytics.Days' |
+            translate}} </span><span style="text-transform: lowercase;"> {{ 'Requests' | translate }}</span> -->
+            {{'ConversationsInTheLastDays' | translate: {range_count: 7} }}
+        </div>
+        <div class="conv-analytics-left-card-title" *ngIf="selectedDaysId === 15">
+          {{'ConversationsInTheLastDays' | translate: {range_count: 15} }}
+        </div>
+        <div class="conv-analytics-left-card-title" *ngIf="selectedDaysId === 30">
+          {{'ConversationsInTheLastDays' | translate: {range_count: 30} }}
+        </div>
+        <div class="conv-analytics-left-card-title" *ngIf="selectedDaysId === 90">
+          {{'ConversationsInTheLastMonths' | translate: {range_count: 3} }}
+        </div>
+        <div class="conv-analytics-left-card-title" *ngIf="selectedDaysId === 180">
+          {{'ConversationsInTheLastMonths' | translate: {range_count: 6} }}
+        </div>
+        <div class="conv-analytics-left-card-title" *ngIf="selectedDaysId === 365">
+          {{'ConversationsInTheLastDays' | translate: {range_count: 365} }}
+        </div>
+      </div>
+
+      <!-- <div class="conv-analytics-indicator-wpr">
+        <div class="conv-analytics-indicator">
+          <div class="conv-analytics-indicator-title">
+            Total
+          </div>
+          <div class="conv-analytics-indicator-val">
+            {{totalHuman + totalBot | number:'1.0-0'}}
+          </div>
+
+        </div>
+      </div>
+      <div>
+        <div class="conv-analytics-total-handled-by-bot">
+          Handled by bots: {{totalBot | number:'1.0-0'}}
+        </div>
+
+        <div class="conv-analytics-total-handled-by-bot">
+          Percentage handled by bots: {{percentageOfRequestsHandledByBots}}%
+        </div>
+      </div> -->
+      <!-- Total -->
+      <div class="conv-analytics-indicator-container">
+        <div class="conv-analytics-indicator-title-wpr">
+          <h2 class="conv-analytics-indicator-title">
+            {{'TotalConversations' | translate}}
+          </h2>
+        </div>
+
+
+        <div class="conv-analytics-indicator-value-wpr">
+          <h2 color="disabled" class="conv-analytics-indicator-value">
+            <!-- {{totalHuman + totalBot | number:'1.0-0'}} -->
+              <span *ngIf="!agentIsAChatbot">
+                {{totalHuman | number:'1.0-0'}}
+              </span>
+              <span *ngIf="agentIsAChatbot">
+                {{totalBot | number:'1.0-0'}}
+              </span>
+           
+          </h2>
+        </div>
+
+      </div>
+
+       <!-- Handled by human -->
+       <!-- <div class="conv-analytics-indicator-container">
+        <div class="conv-analytics-indicator-title-wpr">
+          <h2 class="conv-analytics-indicator-title">
+            {{'HandledByHuman' | translate}}
+          </h2>
+        </div>
+
+
+        <div class="conv-analytics-indicator-value-wpr">
+          <h2 color="disabled" class="conv-analytics-indicator-value">
+            {{totalHuman | number:'1.0-0'}}
+          </h2>
+        </div>
+
+      </div> -->
+
+      <!-- Handled by bots -->
+      <div class="conv-analytics-indicator-container">
+        <div class="conv-analytics-indicator-title-wpr">
+          <h2 class="conv-analytics-indicator-title">
+            {{'HandledByBots' | translate}}
+          </h2>
+        </div>
+
+
+        <div class="conv-analytics-indicator-value-wpr">
+          <h2 color="disabled" class="conv-analytics-indicator-value">
+            {{totalBot | number:'1.0-0'}}
+          </h2>
+        </div>
+
+      </div>
+
+      <!-- Percentage handled by bots -->
+      <div class="conv-analytics-indicator-container">
+        <div class="conv-analytics-indicator-title-wpr">
+          <h2 class="conv-analytics-indicator-title">
+            {{'PercentageHandledByBots' | translate}}
+          </h2>
+        </div>
+
+
+        <div class="conv-analytics-indicator-value-wpr">
+          <h2 color="disabled" class="conv-analytics-indicator-value">
+            {{percentageOfRequestsHandledByBots}}<span class="percentage-symbol"> % </span>
+          </h2>
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+
+  <div class="col-md-9">
+    <div class="card" style="border-radius: 10px;">
+      <div style="padding-top: 27px; padding-bottom: 10px">
+        <span
+          style="padding-bottom: 12px; padding-top:30px; font-size: 18px; font-family: 'Poppins', 'Roboto',  'Arial', sans-serif">
+          {{ 'Analytics.RequestChartTitle' | translate }} {{lastdays}}
+          <span *ngIf="selectedDaysId <= 30">{{ 'Analytics.Days' | translate }}</span>
+          <span *ngIf="selectedDaysId === 90 || selectedDaysId === 180  ">{{ 'Analytics.Months' | translate }}</span>
+          <span *ngIf="selectedDaysId === 365">{{ 'Analytics.Year' | translate }}</span>
+          <span class="analytics-date-range-selected"> {{initDay}} <i class="material-icons arrow_forward-custom">
+              arrow_forward </i> {{endDay}}</span>
+        </span>
+      </div>
+
+      <div class="row" style="padding-left: 52px; padding-right: 38px;">
+        <!-- ------last n days filter--------- -->
+        <!-- <div class="col-sm-3" style="margin-left: 53px;"> -->
+        <div class="col-sm-3">
+          <div class="section-select-dept">
+            <div class="row">
+              <label class="col-sm-12" style="text-align: left; color:black">
+                {{ 'Analytics.FilterReport' | translate }}
+              </label>
+              <!-- margin-bottom: 20px; -->
+              <div class="col-sm-12" style="margin-bottom: 6px; text-align: left;">
+                <ng-select class="custom ng-select-days" name="days" [(ngModel)]="selectedDaysId" [clearable]="false"
+                  (change)="daysSelect(selectedDaysId, $event)">
+                  <ng-option [value]="7">{{ 'Analytics.Last' | translate}} 7 {{ 'Analytics.Days' |
+                    translate}}</ng-option>
+                  <ng-option [value]="15">{{ 'Analytics.Last' | translate}} 15 {{ 'Analytics.Days' |
+                    translate}}</ng-option>
+                  <ng-option [value]="30">{{ 'Analytics.Last' | translate}} 30 {{ 'Analytics.Days' |
+                    translate}}</ng-option>
+                  <ng-option [value]="90">{{ 'Analytics.Last' | translate}} 3 {{ 'Analytics.Months' |
+                    translate}}</ng-option>
+                  <ng-option [value]="180">{{ 'Analytics.Last' | translate}} 6 {{ 'Analytics.Months' |
+                    translate}}</ng-option>
+                  <ng-option [value]="365">{{ 'Analytics.Last' | translate}} 1 {{ 'Analytics.Year' |
+                    translate}}</ng-option>
+                </ng-select>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- ------ init-end days show--------- -->
+        <!-- <div class="col-sm-3" style="width: 18%;"> -->
+        <!-- <div class="col-sm-3">
+          <div class="section-select-dept">
+            <div class="row">
+              <label class="col-sm-12" style="text-align: left; color:black; padding-right: 0px">
+                {{ 'Analytics.DataRangeRequest' | translate }} :
+              </label>
+              <div class="col-sm-12 boxdays" style="padding-top: 2px;">
+                <p style="margin: 0 !important; "> {{initDay}} <i class="material-icons arrow_forward-custom">
+                    arrow_forward </i> {{endDay}}</p>
+              </div>
+            </div>
+          </div>
+        </div> -->
+
+        <!-- ------ department filter--------- -->
+        <div class="col-sm-3">
+          <div class="section-select-dept">
+            <div class="row">
+              <!-- color: rgba(0, 0, 0, 0.54); -->
+              <label class="col-sm-12" style="text-align: left; color:black">
+                {{ 'HistoryPage.FilterByDepartment' | translate }}
+              </label>
+              <!-- margin-bottom: 20px; -->
+              <div class="col-sm-12" style="margin-bottom: 6px; text-align: left;">
+                <ng-select class="custom ng-select-dept" name="dept" [(ngModel)]="selectedDeptId" [clearable]="false"
+                  (change)="depSelected(selectedDeptId)">
+                  <ng-option [value]="''">{{ 'HistoryPage.AllDepts' | translate }}</ng-option>
+                  <ng-option *ngFor="let dept of departments" [value]="dept._id">{{dept.name}}</ng-option>
+                </ng-select>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- ----- agent filter ------ -->
+        <div class="col-sm-3">
+          <div class="section-select-dept">
+            <div class="row">
+              <label class="col-sm-12" style="text-align: left; color:black;">
+                {{ "Agent" | translate }}
+              </label>
+              <div class="col-sm-12" style="margin-bottom: 6px; text-align: left;">
+                <ng-select class="custom ng-select-agent" name="agent" [(ngModel)]="selectedAgentId" [clearable]="false"
+                  (change)="agentSelected(selectedAgentId)">
+                  <ng-option [value]="''">{{'AllAgents' | translate}}</ng-option>
+                  <ng-option *ngFor="let agent of projectUserAndBotsArray" value="{{ agent.id }}">{{
+                    agent.name}}</ng-option>
+                  <!-- <ng-option *ngFor="let agent of projectUsersList" [value]="agent.id_user._id">
+                  {{ agent.id_user.firstname }} {{ agent.id_user.lastname }}
+                </ng-option>
+                <ng-option *ngFor="let bot of projectBotsList" [value]="bot._id">
+                  {{ bot.name }} (Bot)
+                </ng-option> -->
+                </ng-select>
+              </div>
+            </div>
+          </div>
+        </div>
+
+
+        <!-- ----- conversation type filter ------ -->
+        <div class="col-sm-3">
+          <div class="section-select-dept">
+            <div class="row">
+              <label class="col-sm-12" style="text-align: left; color:black;">
+                {{ "MessageChannel" | translate }}
+              </label>
+              <div class="col-sm-12" style="margin-bottom: 6px; text-align: left;">
+                <ng-select class="custom ng-select-conversation-type" name="conversation-type"
+                  [(ngModel)]="selectedChannelId" [clearable]="false"
+                  (change)="conversationTypeSelected(selectedChannelId)">
+                  <ng-option *ngFor="let channel of conversationType" value="{{ channel.id }}">{{
+                    channel.name}}</ng-option>
+                </ng-select>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+      <div class="card-content chart-container" style="position: relative; margin:auto 12px; height:35vh;">
+        <canvas id="lastNdayChart"></canvas>
+      </div>
+
+    </div>
+  </div>
+
+</div>

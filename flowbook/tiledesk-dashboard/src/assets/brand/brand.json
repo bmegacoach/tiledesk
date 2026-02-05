@@ -1,0 +1,91 @@
+{
+  "DASHBOARD": {
+    "META_TITLE": "Flowbook",
+    "FAVICON_URL": "assets/brand/logo.png",
+    "CUSTOM_COMPANY_HOME_LOGO": true,
+    "COMPANY_LOGO_PLANET": "assets/brand/logo.png",
+    "privacy_policy_link_text": "Privacy & Cookie Policy",
+    "privacy_policy_url": "https://yourdomain.com/privacy",
+    "display_terms_and_conditions_link": true,
+    "terms_and_conditions_url": "https://yourdomain.com/terms",
+    "display-news-and-documentation": false,
+    "display_google_auth_btn": false,
+    "display_help_in_installation": false,
+    "display_invite_teammate_btn": true,
+    "display_contact_us_email": true,
+    "custom_redirect_after_logout": false,
+    "after_logout_redirect_URL": "https://yourdomain.com",
+    "display_chatbots_community": false,
+    "display_templates_category": false,
+    "display_change_pwd": true,
+    "EXTREME_MEASURES": false,
+    "SUPPORT_MENU": false,
+    "footer": {
+      "display_terms_and_conditions_link": true,
+      "display_star_us_on_github": false,
+      "display_leave_us_a_feedback": false,
+      "display_followus_on_x": true,
+      "followus_on_x_URL": "https://twitter.com/campalpha",
+      "display_followus_on_fb": true,
+      "followus_on_fb_URL": "https://facebook.com/campalpha",
+      "display_followus_on_in": true,
+      "followus_on_in_URL": "https://linkedin.com/company/campalpha",
+      "display_followus_on_instagram": true,
+      "followus_on_instagram_URL": "https://instagram.com/campalpha",
+      "display_followus_on_youtube": true,
+      "followus_on_youtube_URL": "https://youtube.com/campalpha"
+    },
+    "recent_project_page": {
+      "company_logo_width": "auto",
+      "company_logo_height": "50px",
+      "company_logo_top": "0px",
+      "company_logo_left": "0px"
+    },
+    "signup_page": {
+      "display_terms_and_conditions_link": true,
+      "display_social_proof_container": false
+    },
+    "handle_invitation_page": {
+      "company_logo_45x45": "assets/brand/logo.png"
+    }
+  },
+  "WIDGET": {
+    "LOGO_CHAT": "assets/brand/logo.png",
+    "POWERED_BY": "<a tabindex='-1' target='_blank' href='https://yourdomain.com'><img src='assets/brand/logo.png' style='height:15px;'/><span> Powered by Flowbook</span></a>"
+  },
+  "CHAT": {},
+  "CDS": {
+    "META_TITLE": "Flow Builder",
+    "FAVICON_URL": "assets/brand/logo.png",
+    "INFO_MENU_ITEMS": [
+      {
+        "key": "FEEDBACK",
+        "icon": "",
+        "src": "",
+        "status": "inactive"
+      },
+      {
+        "key": "CHANGELOG",
+        "icon": "",
+        "src": "",
+        "status": "inactive"
+      }
+    ]
+  },
+  "COMMON": {
+    "COMPANY_LOGO": "assets/brand/logo.png",
+    "COMPANY_LOGO_NO_TEXT": "assets/brand/logo.png",
+    "BASE_LOGO": "assets/brand/logo.png",
+    "BASE_LOGO_NO_TEXT": "assets/brand/logo.png",
+    "COMPANY_NAME": "Camp Alpha",
+    "BRAND_NAME": "Flowbook",
+    "COMPANY_SITE_NAME": "campalpha.com",
+    "COMPANY_SITE_URL": "https://campalpha.com",
+    "CONTACT_US_EMAIL": "support@campalpha.com",
+    "CONTACT_SALES_EMAIL": "sales@campalpha.com",
+    "BRAND_PRIMARY_COLOR": "#3ea9f5",
+    "BRAND_SECONDARY_COLOR": "#002159",
+    "DOCS": false,
+    "LOGOUT_ENABLED": true
+  }
+}

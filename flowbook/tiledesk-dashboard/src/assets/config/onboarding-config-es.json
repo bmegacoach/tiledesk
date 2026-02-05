@@ -1,0 +1,31 @@
+{
+  "steps":[
+    {
+      "title": "👋 Hola ${userFullname}",
+      "buttons": {
+        "back": "Regresar",
+        "next": "Continúa"
+      },
+      "questions": [
+        {
+          "title": "¿Cuál es su objetivo principal con Tiledesk?",
+          "type": "button",
+          "attribute_name": "use_case",
+          "buttons": [
+            {"icon":"🛠", "label": "Resolver problemas de los clientes", "value": "solve_customer_problems"},
+            {"icon": "💰", "label": "Aumentar las ventas en línea", "value": "increase_online_sales"}
+          ]
+        },
+        {
+          "title": "¿Qué canal te interesa más?",
+          "type": "button",
+          "attribute_name": "solution_channel",
+          "buttons": [
+            {"icon":"🌐", "label": "Web / Mobile", "value": "web_mobile"},
+            {"icon":"📱", "label": "WhatsApp / FB Messenger", "value": "whatsapp_fb_messenger"}
+          ]
+        }
+      ]
+    }
+  ]
+}

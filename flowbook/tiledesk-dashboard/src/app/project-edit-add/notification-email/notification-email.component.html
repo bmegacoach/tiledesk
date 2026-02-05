@@ -1,0 +1,117 @@
+
+<!-- <div class="navbar-brand" style="z-index: 1050;position: relative; padding-left:30px"
+[ngStyle]="{'margin-top':isChromeVerGreaterThan100 === true ? '-64px' : '6px' }">
+  <i class="material-icons" style="vertical-align: middle !important; cursor: pointer;" rel="tooltip" title="go back"
+    (click)="goBack()">keyboard_arrow_left</i>
+
+  {{ 'ProjectEditPage.CustomizeEmailTemplateBtn' | translate }}
+</div> -->
+
+<span #navbarbrand class="navbar-brand navbar-brand-sidebar-settings"
+  [ngStyle]="{'margin-top':isChromeVerGreaterThan100 === true ? '-64px' : '6px' }"
+  [ngClass]="{'is_opened':IS_OPEN_SETTINGS_SIDEBAR, 'is_closed':!IS_OPEN_SETTINGS_SIDEBAR }">
+
+  <i class="material-icons">settings</i>
+  <span *ngIf="IS_OPEN_SETTINGS_SIDEBAR">{{ 'Settings' | translate }} </span>
+</span>
+
+
+
+<div class="main-content" style="padding-top:0px; padding-left: 10px;padding-right: 5px;">
+
+  <div class="page-title--sidebar-settings"
+    [ngClass]="{'page-title--sidebar-settings_opened':IS_OPEN_SETTINGS_SIDEBAR, 'page-title--sidebar-settings_closed':!IS_OPEN_SETTINGS_SIDEBAR }">
+
+    <i class="material-icons" style="vertical-align: middle !important; cursor: pointer;"
+      (click)="goBack()">keyboard_arrow_left</i>
+      {{ 'ProjectEditPage.CustomizeEmailTemplateBtn' | translate }}
+  </div>
+
+  <div class="container-fluid" style="padding-left: 0px;padding-right: 5px;">
+
+    <!-- <nav mat-tab-nav-bar [tabPanel]="tabPanel">
+      <a mat-tab-link *ngFor="let tmplt of EMAIL_TEMPLATE_NAME"
+         (click)="selectedTemplate(tmplt)"
+         [active]="tmplt === active_template"   
+         [ngClass]="{'tab-active-color' : tmplt === active_template}" > {{tmplt | translate}} </a>
+    </nav>
+    <mat-tab-nav-panel #tabPanel></mat-tab-nav-panel> -->
+
+
+    <div class="content-wpr" style="display: flex;">
+      <appdashboard-settings-sidebar> </appdashboard-settings-sidebar>
+      <!-- <div class="notification-email-left-sidebar-menu">
+        <ul style="padding-left: 0px;    list-style: none;">
+          <li *ngFor="let tmplt of EMAIL_TEMPLATE_NAME" class="nav-email-tmplt-li"
+            [ngClass]="{'nav-email-tmplt-li-active' : tmplt === active_template}" (click)="selectedTemplate(tmplt)">
+            <span>{{tmplt | translate}}</span>
+          </li>
+        </ul>
+      </div> -->
+
+      
+
+      <div class="tempalte-content" style="flex: 1 1 auto; width: calc(100% - 230px); margin-left: 12px;" >
+            <nav mat-tab-nav-bar [tabPanel]="tabPanel">
+              <a mat-tab-link *ngFor="let tmplt of EMAIL_TEMPLATE_NAME"
+                 (click)="selectedTemplate(tmplt)"
+                 [active]="tmplt === active_template"   
+                 [ngClass]="{'tab-active-color' : tmplt === active_template}" > {{tmplt | translate}} </a>
+            </nav>
+            <mat-tab-nav-panel #tabPanel></mat-tab-nav-panel>
+
+        <div class="row template-html-code-row" style="margin-top: 16px;">
+          <div class="col-xs-12 col-md-6 template-html-code-col">
+
+
+            <textarea class="template-html-code" id="input" rows="24" [(ngModel)]="emailTemplate" 
+              (ngModelChange)="onChangeEmailTempalte($event)">
+            </textarea>
+
+            <!-- btn-primary -->
+            <button (click)="saveEmailNotificationTemplate()" class="btn btn-tdblu-no-boxshadow save_email_template"
+              style="margin-top:5px; font-weight: 500; ">
+              {{ "Save" | translate }}
+            </button>
+
+            <!-- <button (click)="seePreview()" class="btn btn-primary see_preview_btn" style="margin-top:5px; font-weight: 500; ">
+            {{ "ProjectEditPage.SeePreview" | translate }}
+          </button> -->
+
+            <!-- <input  id="search" [(ngModel)]="textToSearch" type="search"  autocomplete="off">
+            <button type ="button" (click)="ftxt()" id="btn">Any Text Find</button> -->
+            <!-- Search: <input id="search" placeholder='Search' /> -->
+          </div>
+
+          <div class="col-xs-12 col-md-6 template-iframe-col">
+
+
+            <!-- ---------------------------------------------------- -->
+            <!-- THIS WORKS BUT HAS SECURITY ISSUES -->
+            <!-- ---------------------------------------------------- -->
+            <!-- <div>
+            <div style="border: 1px solid #ddd; width: auto; height: auto" id="output-display" disabled></div>
+          </div> -->
+            <div *ngIf="showSpinner" class="stretchspinner_in_app_install">
+              <div class="rect1"></div>
+              <div class="rect2"></div>
+              <div class="rect3"></div>
+              <div class="rect4"></div>
+              <div class="rect5"></div>
+            </div>
+
+            <iframe width="100%" height="522" style=""
+              id="iframe-email-template-preview" srcdoc=""></iframe>
+
+          </div>
+
+        </div>
+
+      </div>
+
+
+    </div>
+
+
+  </div>
+</div>

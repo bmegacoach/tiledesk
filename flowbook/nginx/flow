@@ -1,0 +1,21 @@
+server {
+  listen 443 ssl http2;
+  server_name yourdomain.com;
+
+  # Tiledesk
+  location / {
+    proxy_pass http://localhost:80;
+  }
+
+  # All webhooks
+  location /whatsapp-webhook { proxy_pass http://localhost:3001; }
+  location /whatsapp-reply { proxy_pass http://localhost:3001; }
+  location /fb-webhook { proxy_pass http://localhost:3002; }
+  location /fb-reply { proxy_pass http://localhost:3002; }
+  location /youtube-webhook { proxy_pass http://localhost:3003; }
+  location /youtube-reply { proxy_pass http://localhost:3003; }
+  location /tiktok-webhook { proxy_pass http://localhost:3004; }
+  location /tiktok-reply { proxy_pass http://localhost:3004; }
+  location /sms-webhook { proxy_pass http://localhost:3005; }
+  location /sms-reply { proxy_pass http://localhost:3005; }
+}
