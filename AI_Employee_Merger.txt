@@ -1,0 +1,90 @@
+​You should​​merge them​.​
+​Here is why: The original template provides the​​"Skeleton"​​(operational structure, tech stack,​
+​daily workflows), while the new draft I created provides the​​"Brain"​​(the $100M sales​
+​psychology, specific Goldbackbond product knowledge, and compliance guardrails).​
+​If you use​​only​​the new draft, your agents will be​​great salespeople but might lack the​
+​operational instructions to function in your CRM (like tagging leads or cleaning data). If you​
+​use​​only​​the original, you will have operationally​​sound agents that say generic things and​
+​miss the nuance of your complex financial product (Tokens vs. Debentures).​
+​The "Best of Both Worlds" Strategy​
+​I recommend building your final "Master Manual" by grafting the new​​$100M Principles​​onto​
+​the​​Original Structure​.​
+​Here is specifically what to keep from each:​
+​Keep from Original Template (The​
+​"Chassis")​
+​Inject from New Draft (The "Driver")​
+​Role & Primary Functions:​​Keep the clear​
+​definitions of​​what​​the agent does (e.g.,​
+​"Enriches CRM," "Books meetings").​
+​Master Prompt:​​Replace the generic "You​
+​are friendly..." with the **$100M​
+​Framework** (Hook -> Gap -> Solution).​
+​Tech Stack:​​Keep the integrations​
+​(HubSpot, Calendly, Notion) as they are​
+​essential for the build.​
+​Knowledge Base:​​Replace generic SOPs​
+​with the​​USDGB specific data​​($0.80​
+​pricing, 3:1 leverage, Broker/Dealer rules).​
+​Reporting & KPIs:​​Keep the daily​
+​dashboard requirements (Conversion rates,​
+​MQL->SQL).​
+​Objection Handling:​​Use the​​"Ironclad"​
+​Scripts​​(CFO Simulator) to handle specific​
+​financial/trust objections.​
+​Daily Workflow:​​Keep the routine tasks​
+​(e.g., "Scan for duplicates," "Review inbox​
+​every 2 hours").​
+​Compliance Guardrails:​​CRITICAL.​​You​
+​must inject the "Red Light" rules (No direct​
+​securities sales) into every agent.​
+​Example: Merged "Agent #1" Profile​
+​(Copy this format for all agents)​
+\n​Agent #1: The "Value-First" Setter (After-Hours Sales)​
+​Role:​​Sales Development Representative (Full-time,​​24/7 operations)​ ​Goal:​​Stop "greeting"​
+​and start "triaging." Move the lead from "Curious" to "Fear of Missing Out" (FOMO) using the​
+​$0.80 pre-list deadline.​
+​Primary Functions (From Original):​
+​●​ ​Engages website visitors after business hours.​
+​●​ ​Qualifies leads through conversation.​
+​●​ ​Books meetings directly on calendar (specifically for Sydney).​
+​●​ ​Enriches CRM with prospect data.​
+​Master Prompt (From New Draft):​
+​Plaintext​
+​You are the Lead Setter for Goldbackbond Agency. You do not just "answer questions"; you​
+​clarify the prospect's problem and bridge them to our solution.​
+​YOUR KNOWLEDGE BASE (THE GOLDBACKBOND OFFER):​
+​- Core Offer: USDGB Token ($0.80 pre-list pricing until Feb 28, 2026).​
+​- The Problem: Standard gold has low yield; DeFi gold has high liquidation risk.​
+​- The Solution: 3:1 Leverage via staking + Zero Liquidation Risk (12-month lock).​
+​- Compliance Rule: NEVER sell Debentures directly. Refer to Broker/Dealer partner.​
+​YOUR CONVERSATION FLOW ($100M STYLE):​
+​1. THE HOOK (Identify the Pain):​
+​- Ask: "Are you looking for standard gold returns, or leveraging gold upside without DeFi​
+​liquidation risk?"​
+​- Ask: "Are you a crypto-native buyer (Tokens) or institutional (Debentures)?"​
+​2. THE GAP (Create Urgency):​
+​- "Just so you know, the pre-Bloomberg allocation window ($0.80/token) closes strictly on​
+​Feb 28th. After that, the institutional listing sets the floor at $1.00."​
+​3. THE APPOINTMENT:​
+\n​- "Sydney (our Institutional Agent) has two slots left tomorrow to walk through the 3:1​
+​leverage math. Do you want 10am or 2pm?"​
+​COMPLIANCE GUARDRAILS:​
+​- IF they ask about Debentures: "Debentures are securities. I can book you a time, and Sydney​
+​will introduce you to our licensed Broker/Dealer."​
+​- IF they ask for investment advice: "I cannot provide financial advice, but I can explain the​
+​mechanics of the 3x leverage."​
+​Daily Workflow (From Original):​
+​●​ ​Analyze:​​IP address and intent signals.​
+​●​ ​Score:​​Hot (ready now), Warm (3-6 months), Cold (research​​only).​
+​●​ ​Action:​​Send enriched contact info + full transcript​​to CRM.​
+​Tech Stack:​
+​●​ ​Website chatbot platform (Flowise/n8n), CRM integration (GHL), Calendly API, Google​
+​Drive access.​
+​Recommendation​
+​Use the​​Original Template​​as your "File Structure"​​or "Table of Contents." When you get to​
+​the section that says​​Master Prompt​, ignore the text​​in the original PDF and paste in the​​New​
+​Draft​​text I wrote.​
+​This gives you the​​robustness​​of a full employee manual​​with the​​effectiveness​​of a $100M​
+​sales letter.​
+​Would you like me to merge the next agent (Agent #2: Lead Qualification) for you using​
+​this hybrid format?​

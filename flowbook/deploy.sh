@@ -20,7 +20,7 @@ for channel in whatsapp fb youtube tiktok sms; do
   pm2 start server.js --name ${channel}-webhook
 done
 
-# Nginx
+# Nginx config for tile.megaversepro.app
 sudo nginx -t && sudo systemctl reload nginx
 
 # AnythingLLM

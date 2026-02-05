@@ -1,6 +1,6 @@
 server {
   listen 443 ssl http2;
-  server_name yourdomain.com;
+  server_name tile.megaversepro.app;
 
   # Tiledesk
   location / {

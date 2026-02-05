@@ -6,7 +6,7 @@ app.use(express.json());
 const VERIFY_TOKEN = 'tiktok_flow_2026';
 const TILEDESK_API_KEY = 'YOUR_KEY';
 const TILEDESK_PROJECTID = 'flow-alpha';
-const TILEDESK_BASE_URL = 'https://yourdomain.com';
+const TILEDESK_BASE_URL = 'https://tile.megaversepro.app';
 
 app.get('/tiktok-webhook', (req, res) => {
     if (req.query.hub_verify_token === VERIFY_TOKEN) {
